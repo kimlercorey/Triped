@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<atm-data>
+   <atm id="232">
+      <session id="1234">
+         <transaction type="deposit">
+            <name>Jeff Delony</name>
+            <account>333-4444-7777777</account>
+            <amount>200.00</amount>
+         </transaction>
+         <transaction type="withdawl">
+            <name>Jeff Delony</name>
+            <account>333-4444-7777777</account>
+            <amount>40.00</amount>
+         </transaction>
+      </session>
+   </atm>
+   <atm id="232">
+      <session id="1235">
+         <transaction type="deposit">
+            <name>Jeff Delony</name>
+            <account>333-4444-7777766</account>
+            <amount>120.00</amount>
+         </transaction>
+      </session>
+   </atm>
+</atm-data>

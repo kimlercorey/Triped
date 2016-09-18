@@ -1,0 +1,39 @@
+{
+  "atm-data": {
+    "atm": [
+      {
+        "-id": "232",
+        "session": {
+          "-id": "1234",
+          "transaction": [
+            {
+              "-type": "deposit",
+              "photo":"data:image/png;base64, data",
+              "name": "Jeff Delony",
+              "account": "333-4444-7777777",
+              "amount": "200.00"
+            },
+            {
+              "-type": "withdrawl",
+              "name": "Jeff Delony",
+              "account": "333-4444-7777777",
+              "amount": "40.00"
+            }
+          ]
+        }
+      },
+      {
+        "-id": "232",
+        "session": {
+          "-id": "1235",
+          "transaction": {
+            "-type": "deposit",
+            "name": "Jeff Delony",
+            "account": "333-4444-7777766",
+            "amount": "120.00"
+          }
+        }
+      }
+    ]
+  }
+}

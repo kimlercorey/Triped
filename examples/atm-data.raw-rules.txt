@@ -1,0 +1,46 @@
+<!-- 
+MODES:
+   permissive - allow submission of additional data (no warnings)
+   lenient - allow submission of additional data (warnings)
+   *strict - disallow submission of additional data (errors)
+
+RULES:
+    atm-data must contain atm
+    atm-data can contain atms
+
+    atm-data.atm must have an id that exists
+    atm-data.atm must contain a session
+    atm-data.atm can contain sessions
+    atm-data.atm must contain transaction
+    atm-data.atm can contain transactions
+    
+    atm-data.atm.transaction must be of -type "deposit", "withdrawl","inquiry", "transfer"
+    
+    atm-data.atm.transaction.deposit-type must contain name, account and amount
+    atm-data.atm.transaction.deposit-type can contain photo
+        atm-data.atm.transaction.deposit-type.name must be name on account
+        atm-data.atm.transaction.deposit-type.account must exist 
+        atm-data.atm.transaction.deposit-type.amount must be a dollar amount : "This atm cannot accept deposits with partial dollars"
+        atm-data.atm.transaction.deposit-type.amount must not greater than 400.00
+        atm-data.atm.transaction.deposit-type.amount must be less than account balance
+    
+    atm-data.atm.transaction.withdawl-type must contain name, account and amount
+    atm-data.atm.transaction.withdawl-type must contain photo
+        atm-data.atm.transaction.withdawl-type.name must be name on account
+        atm-data.atm.transaction.withdawl-type.account must exist 
+        atm-data.atm.transaction.withdawl-type.amount must be a multiple of 20 | a multiple of 50
+        atm-data.atm.transaction.withdawl-type.amount must be less than account balance || f_overdraft-protect must be true
+    
+    atm-data.atm.transaction.inquiry-type must contain name, account
+    atm-data.atm.transaction.inquiry-type can contain photo
+        atm-data.atm.transaction.inquiry-type.name must be name on account
+        atm-data.atm.transaction.inquiry-type.account must exist 
+
+    atm-data.atm.transaction.transfer-type must contain “name” & “account” & “amount” & “destination-account”
+    atm-data.atm.transaction.transfer-type can contain “photo”
+        atm-data.atm.transaction.transfer-type.name must be name on account
+        atm-data.atm.transaction.transfer-type.account must exist 
+        atm-data.atm.transaction.transfer-type.amount must be less-than account balance
+        atm-data.atm.transaction.deposit-type.amount must be an integer
+-->
+
