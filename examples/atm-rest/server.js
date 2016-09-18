@@ -14,7 +14,7 @@ app.use(parse.json());
 
 // Routes
 app.get('/', function(req, res){
-    res.send('App is up and running');
+    res.send('<h1>App is up and running.</h1> <p>get atm-data: <a href="http://127.0.0.1:3000/api/atm-data">http://127.0.0.1:3000/api/atm-data</a> <p> <p> get rules: <a href="http://127.0.0.1:3000/api/rules">http://127.0.0.1:3000/api/rules</a> </p>');
 });
 
 app.use('/api', require('./routes/api'));
