@@ -12,6 +12,7 @@ This problem has come up in so many projects that we decided to lay out a proof 
 
 ####How
 Using many libraries that are already avaiable it is fairly simple to lay out a process that allows data to be both processed and displayed directly via a set of business rules by creating a lexer and solver that performs actions based on a DSL that is defined by the user.
+[[https://github.com/kimlercorey/Triped/blob/master/docs/overview-triped.jpg|alt=overview]]
 
 ####Usage
 todo
