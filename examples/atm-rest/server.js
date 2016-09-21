@@ -1,24 +1,33 @@
-// Dependancies
-var express = require('express');
-var mongoose = require('mongoose');
-var parse = require('body-parser');
-//var mssql = require('tedious');
+var express = require('express'),
+    parse = require('body-parser'),
+    morgan = require('morgan'),
+    mongoose = require('mongoose'),
+    mssql = require('tedious'),
+    ip = require('my-local-ip')(),
+    port = 3000;
 
-// Database
-mongoose.connect('mongodb://127.0.0.1/atmtest');
-
-// Express
 var app = express();
+
+app.use(morgan('dev'));
 app.use(parse.urlencoded({ extended: true }));
 app.use(parse.json());
+app.use(parse.json({type:'application/vnd.api+json'}));
+mongoose.connect('mongodb://127.0.0.1/atm-datas');
 
-// Routes
-app.get('/', function(req, res){
-    res.send('<h1>App is up and running.</h1> <p>get atm-data: <a href="http://127.0.0.1:3000/api/atm-data">http://127.0.0.1:3000/api/atm-data</a> <p> <p> get rules: <a href="http://127.0.0.1:3000/api/rules">http://127.0.0.1:3000/api/rules</a> </p>');
-});
 
 app.use('/api', require('./routes/api'));
 
+// Static Route
+app.get('/', function(req, res){
+    res.send(`
+    <h1>Triped is running.</h1> 
+    <p>get atm-data: <a href="http://`+ip+`:`+port+`/api/atm-datas">http://`+ip+`:`+port+`/api/atm-datas</a></p>
+    <p></p>
+    <p> get rules: <a href="http://`+ip+`:`+port+`/api/rules">http://`+ip+`:`+port+`/api/rules</a> </p>`);
+});
+
+
+
 // Start server
-app.listen(3000);
-console.log('API running ... http://127.0.0.1:3000');
+app.listen(port);
+console.log('API running ... http://' + ip + ':'+port);

@@ -6,12 +6,13 @@ var router = express.Router();
 var Rule = require('../models/rule');
 var AtmData = require('../models/atm-data');
 
+
 // Routes
 Rule.methods(['get', 'put', 'post', 'delete']);
 Rule.register(router, '/rules')
 
 AtmData.methods(['get', 'put', 'post', 'delete']);
-AtmData.register(router, '/atm-data')
+AtmData.register(router, '/atm-datas')
 
 // Return module
 module.exports = router;

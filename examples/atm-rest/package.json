@@ -1,18 +1,25 @@
 {
   "name": "atm-rest",
   "version": "1.0.0",
-  "description": "Node business rule processor",
+  "description": "Node business rule processor example app",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "kimler@gmail.com, messer@rocketmail.com",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "mongodb": "^2.2.10",
     "mongoose": "^4.6.0",
-    "node-restful": "^0.2.5"
+    "morgan": "^1.7.0",
+    "my-local-ip": "^1.0.0",
+    "node-restful": "^0.2.5",
+    "tedious": "^1.14.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kimlercorey/triped.git"
   }
 }
