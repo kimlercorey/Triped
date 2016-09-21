@@ -1,0 +1,5 @@
+{
+	"name":"Users can only deposit 400 per transaction [transaction rule: 121]",
+	"order":40,
+	"rule":"atm-data.atm.transaction.deposit-type.amount must not greater than 400.00"
+}

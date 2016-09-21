@@ -6,7 +6,6 @@ var router = express.Router();
 var Rule = require('../models/rule');
 var AtmData = require('../models/atm-data');
 
-
 // Routes
 Rule.methods(['get', 'put', 'post', 'delete']);
 Rule.register(router, '/rules')
