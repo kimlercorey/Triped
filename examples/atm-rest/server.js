@@ -74,7 +74,8 @@ app.get('/', function(req, res){
     <p></p>
     <p>Post/get json rules: <a href="http://`+ip+`:`+port+`/api/rules">http://`+ip+`:`+port+`/api/rules</a> </p>
     <p></p>
-    <p>Apply rules - post plain-text body to process: <a href="http://`+ip+`:`+port+`/parse">http://`+ip+`:`+port+`/parse</a> (right now accepts math e.g. 22 + 43)
+    <p>Apply rules - post plain-text body to process: <a href="http://`+ip+`:`+port+`/parse">http://`+ip+`:`+port+`/parse</a> <br>
+    (e.g. returns Abstract Syntax Tree - "rules.name is a String" becomes 'WORD ISA WORD')
     </p>
     `);
 });
