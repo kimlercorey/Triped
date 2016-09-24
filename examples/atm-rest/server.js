@@ -35,11 +35,16 @@ app.use(parse.json({type:'application/vnd.api+json'}));
 // Connect to mongo for dynamic routes
 mongoose.connect('mongodb://127.0.0.1/atm-datas');
 
+// Static Routes
+app.post('/parse', function(req, res){  
+    console.log("Recieving: " + req.text + " to process..." );
+    response = '{ "reponse" : "' + parse_validation.exec(req.text) + '" }';
+    console.log( "Using: " +  parse_validation.name + " generates result: " + parse_validation.exec(req.text) );
+    res.send( response ); 
+});
+
 // Data driven Routes
 app.use('/api', require('./routes/api'));
-
-// Static Routes
-app.post('/parse', function(req, res){  res.send( '{ "reponse" : "' + parse_validation.exec(req.text) + '" }' ); });
 
 // this needs to be moved out to a template at some point
 app.get('/', function(req, res){

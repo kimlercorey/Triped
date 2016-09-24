@@ -71,21 +71,20 @@
     recoverable: (boolean: TRUE when the parser has a error recovery rule available for this particular error)
   }
 */
-var calculator = (function(){
-var o=function(k,v,o,l){for(o=o||{},l=k.length;l--;o[k[l]]=v);return o},$V0=[1,3],$V1=[1,4],$V2=[1,5],$V3=[1,6],$V4=[1,7],$V5=[1,9],$V6=[1,10],$V7=[1,11],$V8=[1,12],$V9=[1,13],$Va=[1,14],$Vb=[1,15],$Vc=[5,6,7,8,9,10,11,12,14],$Vd=[5,6,7,14],$Ve=[5,6,7,8,9,14];
+var atm_rules_parser = (function(){
+var o=function(k,v,o,l){for(o=o||{},l=k.length;l--;o[k[l]]=v);return o},$V0=[1,3],$V1=[1,11],$V2=[1,4],$V3=[1,5],$V4=[1,6],$V5=[1,7],$V6=[1,8],$V7=[1,9],$V8=[1,10],$V9=[1,12],$Va=[1,14],$Vb=[1,15],$Vc=[1,16],$Vd=[1,17],$Ve=[1,18],$Vf=[1,19],$Vg=[5,6,7,8,9,10,11,13],$Vh=[5,6,7,13],$Vi=[5,6,7,8,9,10,13];
 var parser = {trace: function trace() { },
 yy: {},
-symbols_: {"error":2,"expressions":3,"e":4,"EOF":5,"+":6,"-":7,"*":8,"/":9,"^":10,"!":11,"%":12,"(":13,")":14,"NUMBER":15,"E":16,"PI":17,"$accept":0,"$end":1},
-terminals_: {2:"error",5:"EOF",6:"+",7:"-",8:"*",9:"/",10:"^",11:"!",12:"%",13:"(",14:")",15:"NUMBER",16:"E",17:"PI"},
-productions_: [0,[3,2],[4,3],[4,3],[4,3],[4,3],[4,3],[4,2],[4,2],[4,2],[4,3],[4,1],[4,1],[4,1]],
+symbols_: {"error":2,"expressions":3,"e":4,"EOF":5,"+":6,"-":7,"*":8,"ISA":9,"/":10,"^":11,"(":12,")":13,"NUMBER":14,"E":15,"PI":16,"MUC":17,"MUE":18,"WORD":19,"REQUIRED":20,"$accept":0,"$end":1},
+terminals_: {2:"error",5:"EOF",6:"+",7:"-",8:"*",9:"ISA",10:"/",11:"^",12:"(",13:")",14:"NUMBER",15:"E",16:"PI",17:"MUC",18:"MUE",19:"WORD",20:"REQUIRED"},
+productions_: [0,[3,2],[4,3],[4,3],[4,3],[4,3],[4,3],[4,3],[4,2],[4,3],[4,1],[4,1],[4,1],[4,1],[4,1],[4,1],[4,1],[4,1]],
 performAction: function anonymous(yytext, yyleng, yylineno, yy, yystate /* action[1] */, $$ /* vstack */, _$ /* lstack */) {
 /* this == yyval */
 
 var $0 = $$.length - 1;
 switch (yystate) {
 case 1:
- typeof console !== 'undefined' ? console.log($$[$0-1]) : print($$[$0-1]);
-          return $$[$0-1]; 
+return $$[$0-1];
 break;
 case 2:
 this.$ = $$[$0-2]+$$[$0];
@@ -97,38 +96,48 @@ case 4:
 this.$ = $$[$0-2]*$$[$0];
 break;
 case 5:
-this.$ = $$[$0-2]/$$[$0];
+this.$ = $$[$0-2] + ' ISA ' + $$[$0];
 break;
 case 6:
-this.$ = Math.pow($$[$0-2], $$[$0]);
+this.$ = $$[$0-2]/$$[$0];
 break;
 case 7:
-
-          this.$ = (function fact (n) { return n==0 ? 1 : fact(n-1) * n })($$[$0-1]);
-        
+this.$ = Math.pow($$[$0-2], $$[$0]);
 break;
 case 8:
-this.$ = $$[$0-1]/100;
-break;
-case 9:
 this.$ = -$$[$0];
 break;
-case 10:
+case 9:
 this.$ = $$[$0-1];
 break;
-case 11:
+case 10:
 this.$ = Number(yytext);
 break;
-case 12:
+case 11:
 this.$ = Math.E;
 break;
-case 13:
+case 12:
 this.$ = Math.PI;
+break;
+case 13:
+this.$ = 'MUC';
+break;
+case 14:
+this.$ = 'MUE';
+break;
+case 15:
+this.$ = 'WORD';
+break;
+case 16:
+this.$ = 'ISA';
+break;
+case 17:
+this.$ = 'REQUIRED';
 break;
 }
 },
-table: [{3:1,4:2,7:$V0,13:$V1,15:$V2,16:$V3,17:$V4},{1:[3]},{5:[1,8],6:$V5,7:$V6,8:$V7,9:$V8,10:$V9,11:$Va,12:$Vb},{4:16,7:$V0,13:$V1,15:$V2,16:$V3,17:$V4},{4:17,7:$V0,13:$V1,15:$V2,16:$V3,17:$V4},o($Vc,[2,11]),o($Vc,[2,12]),o($Vc,[2,13]),{1:[2,1]},{4:18,7:$V0,13:$V1,15:$V2,16:$V3,17:$V4},{4:19,7:$V0,13:$V1,15:$V2,16:$V3,17:$V4},{4:20,7:$V0,13:$V1,15:$V2,16:$V3,17:$V4},{4:21,7:$V0,13:$V1,15:$V2,16:$V3,17:$V4},{4:22,7:$V0,13:$V1,15:$V2,16:$V3,17:$V4},o($Vc,[2,7]),o($Vc,[2,8]),o($Vc,[2,9]),{6:$V5,7:$V6,8:$V7,9:$V8,10:$V9,11:$Va,12:$Vb,14:[1,23]},o($Vd,[2,2],{8:$V7,9:$V8,10:$V9,11:$Va,12:$Vb}),o($Vd,[2,3],{8:$V7,9:$V8,10:$V9,11:$Va,12:$Vb}),o($Ve,[2,4],{10:$V9,11:$Va,12:$Vb}),o($Ve,[2,5],{10:$V9,11:$Va,12:$Vb}),o([5,6,7,8,9,10,14],[2,6],{11:$Va,12:$Vb}),o($Vc,[2,10])],
-defaultActions: {8:[2,1]},
+table: [{3:1,4:2,7:$V0,9:$V1,12:$V2,14:$V3,15:$V4,16:$V5,17:$V6,18:$V7,19:$V8,20:$V9},{1:[3]},{5:[1,13],6:$Va,7:$Vb,8:$Vc,9:$Vd,10:$Ve,11:$Vf},{4:20,7:$V0,9:$V1,12:$V2,14:$V3,15:$V4,16:$V5,17:$V6,18:$V7,19:$V8,20:$V9},{4:21,7:$V0,9:$V1,12:$V2,14:$V3,15:$V4,16:$V5,17:$V6,18:$V7,19:$V8,20:$V9},o($Vg,[2,10]),o($Vg,[2,11]),o($Vg,[2,12]),o($Vg,[2,13]),o($Vg,[2,14]),o($Vg,[2,15]),o($Vg,[2,16]),o($Vg,[2,17]),{1:[2,1]},{4:22,7:$V0,9:$V1,12:$V2,14:$V3,15:$V4,16:$V5,17:$V6,18:$V7,19:$V8,20:$V9},{4:23,7:$V0,9:$V1,12:$V2,14:$V3,15:$V4,16:$V5,17:$V6,18:$V7,19:$V8,20:$V9},{4:24,7:$V0,9:$V1,12:$V2,14:$V3,15:$V4,16:$V5,17:$V6,18:$V7,19:$V8,20:$V9},{4:25,7:$V0,9:$V1,12:$V2,14:$V3,15:$V4,16:$V5,17:$V6,18:$V7,19:$V8,20:$V9},{4:26,7:$V0,9:$V1,12:$V2,14:$V3,15:$V4,16:$V5,17:$V6,18:$V7,19:$V8,20:$V9},{4:27,7:$V0,9:$V1,12:$V2,14:$V3,15:$V4,16:$V5,17:$V6,18:$V7,19:$V8,20:$V9},o($Vg,[2,8]),{6:$Va,7:$Vb,8:$Vc,9:$Vd,10:$Ve,11:$Vf,13:[1,28]},o($Vh,[2,2],{8:$Vc,9:$Vd,10:$Ve,11:$Vf}),o($Vh,[2,3],{8:$Vc,9:$Vd,10:$Ve,11:$Vf}),o($Vi,[2,4],{11:$Vf}),o($Vi,[2,5],{11:$Vf}),o($Vi,[2,6],{11:$Vf}),o($Vg,[2,7]),o($Vg,[2,9])],
+defaultActions: {13:[2,1]},
 parseError: function parseError(str, hash) {
     if (hash.recoverable) {
         this.trace(str);
@@ -609,38 +618,26 @@ var YYSTATE=YY_START;
 switch($avoiding_name_collisions) {
 case 0:/* skip whitespace */
 break;
-case 1:return 15
+case 1:return 14
 break;
-case 2:return 8
+case 2:return 9
 break;
-case 3:return 9
+case 3:return 20
 break;
-case 4:return 7
+case 4:return 'LPAREN'
 break;
-case 5:return 6
+case 5:return 'RPAREN'
 break;
-case 6:return 10
+case 6:return 19
 break;
-case 7:return 11
+case 7:return 5
 break;
-case 8:return 12
-break;
-case 9:return 13
-break;
-case 10:return 14
-break;
-case 11:return 17
-break;
-case 12:return 16
-break;
-case 13:return 5
-break;
-case 14:return 'INVALID'
+case 8:return 'INVALID'
 break;
 }
 },
-rules: [/^(?:\s+)/,/^(?:[0-9]+(\.[0-9]+)?\b)/,/^(?:\*)/,/^(?:\/)/,/^(?:-)/,/^(?:\+)/,/^(?:\^)/,/^(?:!)/,/^(?:%)/,/^(?:\()/,/^(?:\))/,/^(?:PI\b)/,/^(?:E\b)/,/^(?:$)/,/^(?:.)/],
-conditions: {"INITIAL":{"rules":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14],"inclusive":true}}
+rules: [/^(?:\s+)/,/^(?:[0-9]+(\.[0-9]+)?\b)/,/^(?:is(\s?an?)?\b)/,/^(?:required\b)/,/^(?:\()/,/^(?:\))/,/^(?:[a-zA-Z0-9\.\-\_]+\b)/,/^(?:$)/,/^(?:.)/],
+conditions: {"INITIAL":{"rules":[0,1,2,3,4,5,6,7,8],"inclusive":true}}
 });
 return lexer;
 })();
@@ -654,9 +651,9 @@ return new Parser;
 
 
 if (typeof require !== 'undefined' && typeof exports !== 'undefined') {
-exports.parser = calculator;
-exports.Parser = calculator.Parser;
-exports.parse = function () { return calculator.parse.apply(calculator, arguments); };
+exports.parser = atm_rules_parser;
+exports.Parser = atm_rules_parser.Parser;
+exports.parse = function () { return atm_rules_parser.parse.apply(atm_rules_parser, arguments); };
 exports.main = function commonjsMain(args) {
     if (!args[1]) {
         console.log('Usage: '+args[0]+' FILE');

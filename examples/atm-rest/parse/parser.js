@@ -1,10 +1,11 @@
-// p = load parsing rules for input
-var p = require("./atm_rules_parser").parser;
 
-// execute the parse
+var parser = require("./atm_rules_parser").parser;
+
+var name = "atm_rules_parser";
+
 var exec = function exec (input) {
-    return p.parse(input);
+    return parser.parse(input);
 }
 
-// make the reusult avaiable to call
+exports.name = name;
 exports.exec = exec;
