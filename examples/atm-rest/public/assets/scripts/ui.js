@@ -43,22 +43,19 @@ PARTICLE.controller("uiController",function($scope, $timeout,$http) {
 	$scope.thing = [0,4,5,6,7];
 
 	$scope.postdata = '';
-	$scope.data = "Data place holder";
+	$scope.data = JSON.parse('{ "name":"the name", "order":40, "rule":"the rule" }');
 	$scope.status = "Fake Status";
 
-    $scope.sendPost = function() {
-        var data = $.param({
-            json: JSON.stringify({
-                name: $scope.newName
-            })
-        });
-        $http.post("/api/atm-datas", data).success(function(data, status) {
-			console.log(data,status)
-        }).error(function (data, status, headers, config) {
-            $scope.status = status;
-			console.log(data, status, headers, config)
-        });
-    } 
+$http.post('/api/rules/', $scope.data)
+.then(function(data, status) { // success
+          console.log( "Success: ");
+})   
+.catch(function(data, status, headers, config) { // error
+		  console.log( "Error" );    
+}); 
+
+
+
 
 
 });
