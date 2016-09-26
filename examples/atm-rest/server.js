@@ -5,7 +5,7 @@ var express = require('express'),
     mssql = require('tedious'),
     ip = require('my-local-ip')(),
     parse_validation = require('./parse/parser.js'),
-    port = 3000;
+    port = 80;
 
 var app = express();
 
