@@ -23,5 +23,10 @@ var atm_dataSchema = new mongoose.Schema({
     atmsessions: [sessionSchema]
 });
 
+
+//console.log(atm_dataSchema.paths);
+//console.log(sessionSchema.paths);
+//console.log(transactionSchema.paths);
+
 // return model
 module.exports = restful.model('atm-data', atm_dataSchema);

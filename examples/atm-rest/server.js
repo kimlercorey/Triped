@@ -12,6 +12,14 @@ var app = express();
 // logging
 app.use(morgan('dev'));
 
+// cors on express - http://enable-cors.org/server_expressjs.html
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+
 // Add req.text for plain text post to parse data 
 app.use(function(req, res, next){
   if (req.is('text/*')) {
